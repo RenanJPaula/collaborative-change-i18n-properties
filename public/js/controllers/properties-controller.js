@@ -32,10 +32,12 @@
     }
 
     vm.getTranslateHeaderName = (translates) => {
-      const _translateHeaderName = ['Propert Name']
+      const _translateHeaderName = [];
+
       for (var name in translates) {
         _translateHeaderName.push(name)
       }
+      
       return _translateHeaderName
     }
   }

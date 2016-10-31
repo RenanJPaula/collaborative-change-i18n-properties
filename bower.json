@@ -1,0 +1,27 @@
+{
+  "name": "i18n-collaborative",
+  "description": "Collaborative project to manage i18n properties",
+  "main": "public/js/app.js",
+  "authors": [
+    "renanjpaula"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "Entelgy",
+    "i18n",
+    "Liferay",
+    "collaborative"
+  ],
+  "homepage": "https://github.com/RenanJPaula/collaborative-change-i18n-properties",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "Stickyfill": "^1.1.4"
+  }
+}

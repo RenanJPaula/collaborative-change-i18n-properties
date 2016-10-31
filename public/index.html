@@ -9,36 +9,45 @@
 
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/modifiers.css">
+    <link rel="stylesheet" href="css/grid.css">
     <link rel="stylesheet" href="css/form.css">
+    <link rel="stylesheet" href="css/modifiers.css">
+    <link rel="stylesheet" href="css/polyfills/stickyfill.css">
   </head>
 
   <body>
     <h1 class="text--center">i18n collaboration</h1>
 
     <main data-ng-controller="PropertiesController as vm" data-ng-init="vm.init()">
-      <div data-ng-repeat="(groupName, properties) in vm.properties">
+      <section class="margin-vertical"
+        data-ng-repeat="(groupName, properties) in vm.properties">
 
-        <h2>{{ groupName }}</h2>
+        <h2 class="section__title sticky">{{ groupName }}</h2>
 
-        <div class="table-wrapper">
-          <div data-ng-repeat="(propertieName, translates) in properties">
-              <div data-ng-if="$first">
-                  <p data-ng-repeat="translateName in ::vm.getTranslateHeaderName(translates)"> {{ translateName }} </p>
-              </div>
+        <div data-ng-repeat="(propertieName, translates) in properties">
 
-              <div>
-                  <p>{{ propertieName }}</p>
-                  <div data-ng-repeat="(fileName, translateValue) in translates">
-                    <input type="text"
-                           data-ng-model="translateValue"
-                           data-ng-blur="vm.changePropertie(groupName, propertieName, fileName, translateValue)">
-                  </div>
-              </div>
+          <div class="row section__header" data-ng-if="$first">
+            <p class="col sm-100 lg-33 no-margin"
+              data-ng-repeat="translateName in ::vm.getTranslateHeaderName(translates)">
+              <em>{{ translateName }}</em>
+            </p>
+          </div>
+
+          <div class="row margin-vertical">
+            <p class="col sm-100 word-break">
+              <b>{{ propertieName }}</b>
+            </p>
+
+            <div class="col sm-100 lg-33"
+              data-ng-repeat="(fileName, translateValue) in translates">
+              <input type="text"
+                data-ng-model="translateValue"
+                data-ng-blur="vm.changePropertie(groupName, propertieName, fileName, translateValue)">
+            </div>
           </div>
         </div>
 
-      </div>
+      </section>
     </main>
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
@@ -48,6 +57,9 @@
     <script src="js/config/api-config.js"></script>
     <script src="js/services/properties-service.js"></script>
     <script src="js/controllers/properties-controller.js"></script>
+
+    <script src="lib/Stickyfill/dist/stickyfill.js"></script>
+    <script src="js/polyfills/stickyfill.js"></script>
 
   </body>
 </html>

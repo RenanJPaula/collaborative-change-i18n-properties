@@ -1,7 +1,7 @@
 input[type=text] {
 	background: transparent;
 	border: none;
-	border-bottom: 1px solid #BBB;
+	border-bottom: 1px solid #0E9BAD;
 	box-shadow: none;
 	color: inherit;
 	font-family: inherit;
@@ -18,7 +18,7 @@ input[type=text] {
 }
 
 	input[type=text]:focus {
-		border-bottom-color: #35353E;
+		border-bottom-color: #F7A903;
 		transition: border-color 200ms ease-in-out;
 	}
 
