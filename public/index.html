@@ -22,26 +22,20 @@
         <h2>{{ groupName }}</h2>
 
         <div class="table-wrapper">
-          <table data-ng-repeat="(propertieName, translates) in properties">
-          <thead data-ng-if="$first">
-            <tr>
-              <th data-ng-repeat="translateName in ::vm.getTranslateHeaderName(translates)">
-                {{ translateName }}
-              </th>
-            </tr>
-          </thead>
+          <div data-ng-repeat="(propertieName, translates) in properties">
+              <div data-ng-if="$first">
+                  <p data-ng-repeat="translateName in ::vm.getTranslateHeaderName(translates)"> {{ translateName }} </p>
+              </div>
 
-          <tbody>
-            <tr>
-              <td>{{ propertieName }}</td>
-              <td data-ng-repeat="(fileName, translateValue) in translates">
-                <input type="text"
-                       data-ng-model="translateValue"
-                       data-ng-blur="vm.changePropertie(groupName, propertieName, fileName, translateValue)">
-              </td>
-            </tr>
-          </tbody>
-        </table>
+              <div>
+                  <p>{{ propertieName }}</p>
+                  <div data-ng-repeat="(fileName, translateValue) in translates">
+                    <input type="text"
+                           data-ng-model="translateValue"
+                           data-ng-blur="vm.changePropertie(groupName, propertieName, fileName, translateValue)">
+                  </div>
+              </div>
+          </div>
         </div>
 
       </div>
