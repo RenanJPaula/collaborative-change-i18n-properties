@@ -1,28 +1,39 @@
-<!DOCTYPE html>
+<!doctype html>
 <html data-ng-app="app" data-ng-cloak>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="theme-color" content="#40435B">
+
     <title>i18n collaboration</title>
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/modifiers.css">
+    <link rel="stylesheet" href="css/form.css">
   </head>
+
   <body>
-    <h1>i18n collaboration</h1>
+    <h1 class="text--center">i18n collaboration</h1>
 
     <main data-ng-controller="PropertiesController as vm" data-ng-init="vm.init()">
       <div data-ng-repeat="(groupName, properties) in vm.properties">
-        <h2>{{groupName}}</h2>
-        <table data-ng-repeat="(propertieName, translates) in properties">
 
+        <h2>{{ groupName }}</h2>
+
+        <div class="table-wrapper">
+          <table data-ng-repeat="(propertieName, translates) in properties">
           <thead data-ng-if="$first">
             <tr>
               <th data-ng-repeat="translateName in ::vm.getTranslateHeaderName(translates)">
-                {{translateName}}
+                {{ translateName }}
               </th>
             </tr>
           </thead>
 
           <tbody>
             <tr>
-              <td>{{propertieName}}</td>
+              <td>{{ propertieName }}</td>
               <td data-ng-repeat="(fileName, translateValue) in translates">
                 <input type="text"
                        data-ng-model="translateValue"
@@ -31,14 +42,18 @@
             </tr>
           </tbody>
         </table>
+        </div>
+
       </div>
     </main>
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
     <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+
     <script src="js/app.js"></script>
     <script src="js/config/api-config.js"></script>
     <script src="js/services/properties-service.js"></script>
     <script src="js/controllers/properties-controller.js"></script>
+
   </body>
 </html>

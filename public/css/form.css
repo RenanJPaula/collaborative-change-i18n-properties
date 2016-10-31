@@ -1,0 +1,44 @@
+input[type=text] {
+	background: transparent;
+	border: none;
+	border-bottom: 1px solid #BBB;
+	box-shadow: none;
+	color: inherit;
+	font-family: inherit;
+	font-size: 1em;
+	display: block;
+	height: 2em;
+	width: 100%;
+	line-height: 1.2;
+	margin: 0 0 .75em;
+	outline: none;
+	padding: .25em .5em;
+	transition: border-color 200ms ease-in-out;
+	width: 100%;
+}
+
+	input[type=text]:focus {
+		border-bottom-color: #35353E;
+		transition: border-color 200ms ease-in-out;
+	}
+
+.button {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	background-color: transparent;
+	border: none;
+	box-shadow: 0 0 15px rgba(0, 0, 0, .4);
+	color: #FFF;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 1em;
+	font-weight: normal;
+	line-height: normal;
+	margin-top: .8125em;
+	margin-bottom: .8125em;
+	opacity: 1;
+	padding: .75em;
+	position: relative;
+	text-align: center;
+	text-decoration: none;
+}

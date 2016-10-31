@@ -1,5 +1,7 @@
 
-# Created by https://www.gitignore.io/api/node
+# Created by https://www.gitignore.io/api/nod,node
+
+#!! ERROR: nod is undefined. Use list command to see defined gitignore types !!#
 
 ### Node ###
 # Logs
